@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Simple URL Shortener</title>
+
+    <style>
+
+        body{
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: Arial;
+
+            background-color: #f4f4f4;
+        }
+
+        .container{
+
+            width: 550px;
+
+            margin: 120px auto;
+
+            background-color: white;
+
+            padding: 40px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow: 0px 0px 15px lightgray;
+        }
+
+        h1{
+
+            margin-bottom: 30px;
+
+            color: #333;
+        }
+
+        input{
+
+            width: 70%;
+
+            padding: 12px;
+
+            border: 1px solid gray;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        button{
+
+            padding: 12px 18px;
+
+            border: none;
+
+            background-color: #007bff;
+
+            color: white;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+        button:hover{
+
+            background-color: #0056b3;
+        }
+
+        .result{
+
+            margin-top: 30px;
+
+            background-color: #f2f8ff;
+
+            padding: 20px;
+
+            border-radius: 8px;
+        }
+
+        .success-text{
+
+            color: green;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .url-box{
+
+            background-color: white;
+
+            border: 2px solid #007bff;
+
+            padding: 15px;
+
+            border-radius: 8px;
+        }
+
+        .url-box a{
+
+            text-decoration: none;
+
+            color: #007bff;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+        .url-box a:hover{
+
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Simple URL Shortener</h1>
+
+        <form action="/shorten" method="POST">
+
+            <input
+                type="text"
+                name="long_url"
+                placeholder="Enter Long URL"
+                required
+            >
+
+            <button type="submit">
+                Shorten
+            </button>
+
+        </form>
+
+        {% if short_url %}
+
+            <div class="result">
+
+                <p class="success-text">
+                    URL Shortened Successfully..!
+                </p>
+
+                <div class="url-box">
+
+                    <a href="{{ short_url }}" target="_blank">
+
+                        {{ short_url }}
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
