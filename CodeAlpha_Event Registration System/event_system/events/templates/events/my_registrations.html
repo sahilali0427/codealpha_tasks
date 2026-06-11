@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Registrations</title>
+    <link rel="stylesheet" href="{% static 'events/style.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/events/">Events</a>
+</div>
+
+<div class="container">
+
+<h1>My Registrations</h1>
+
+{% for reg in registrations %}
+
+<div class="card">
+
+<h3>{{ reg.event.name }}</h3>
+
+<p>{{ reg.event.venue }}</p>
+
+<p>{{ reg.event.date }}</p>
+
+<a class="cancel-btn"
+   href="/cancel/{{ reg.id }}/">
+   Cancel Registration
+</a>
+
+</div>
+
+{% empty %}
+
+<p>No registrations yet.</p>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>
