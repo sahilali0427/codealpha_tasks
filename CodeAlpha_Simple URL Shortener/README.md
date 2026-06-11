@@ -19,20 +19,6 @@ A simple web application built with Flask that converts long URLs into short and
 * HTML
 * CSS
 
-## Project Structure
-
-simple-url-shortener/
-
-├── app.py
-
-├── urls.db
-
-├── requirements.txt
-
-└── templates/
-
-    └── index.html
-
 ## How It Works
 
 1. The user enters a long URL.
